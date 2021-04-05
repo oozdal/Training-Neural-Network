@@ -18,3 +18,13 @@ double Perceptron::run(vector<double> x){
 	double sum = inner_product(x.begin(),x.end(),weights.begin(),(double)0.0);
 	return sigmoid(sum);
 }
+
+// Set the weights. w_init is a vector with the weights.
+void Perceptron::set_weights(vector<double> w_init){
+	weights = w_init;
+}
+
+// Evaluate the sigmoid function for the floating point input x.
+double Perceptron::sigmoid(double x){
+	return 1.0/(1.0 + exp(-x));
+}
